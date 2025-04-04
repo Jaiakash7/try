@@ -528,7 +528,7 @@ const logos = [
           </div>
         </section>
        <section id="contact" className="py-16 bg-black/50 backdrop-blur-sm">        
-        <div className="w-full max-w-3xl mx-auto rounded-lg shadow-lg bg-black/70 sm:p-20 p-15">
+        <div className="w-full max-w-3xl mx-auto rounded-lg shadow-lg bg-black/70 sm:p-20 p-18">
         <div className="flex items-center gap-2 mb-4">
          <MapPin className="w-6 h-6 text-blue-500" />
          <h1 className="text-2xl font-bold text-gray-200">College Location</h1>
