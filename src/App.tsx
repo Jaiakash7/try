@@ -22,6 +22,9 @@ import pm from "../public/pm.jpeg"
 import mh from "../public/mh.jpeg"
 import rs from "../public/rs.jpeg"
 import wh from "../public/wh.jpeg"
+import GoogleMap from "../public/components/GoogleMap.tsx";
+
+
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -191,7 +194,7 @@ const logos = [
         <div className="relative z-10">
   {/* Top Logo Bar */}
   <div className="container mx-auto px-4 py-6">
-      <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-6 items-center justify-items-center">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-6 items-center justify-items-center">
         {logos.map((logo, index) => (
           <div 
             key={index} 
@@ -210,7 +213,7 @@ const logos = [
 </div>
 
         {/* Navigation */}
-        <nav className="bg-black/0 backdrop-blur-sm py-2 border-b border-yellow-400/20">
+        <nav className="bg-black/0 backdrop-blur-sm  border-b border-yellow-400/20">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex justify-between items-center h-16">
               <div className="flex-shrink-0">
@@ -218,12 +221,12 @@ const logos = [
               </div>
 
               {/* Desktop Menu */}
-              <div className="hidden md:flex space-x-8">
-                <Link to="/" className="hover:text-yellow-400 transition">Home</Link>
-                <a href="#events" className="hover:text-yellow-400 transition">Events</a>
-                <a href="#sponsors" className="hover:text-yellow-400 transition">Sponsors</a>
-                <Link to="/about" className="hover:text-yellow-400 transition">About</Link>
-                <a href="#contact" className="hover:text-yellow-400 transition">Contact</a>
+              <div className="hidden md:flex space-x-10">
+                <Link to="/" className="hover:text-yellow-400 transition">HOME</Link>
+                <a href="#events" className="hover:text-yellow-400 transition">EVENTS</a>
+                {/* <a href="#sponsors" className="hover:text-yellow-400 transition">Sponsors</a> */}
+                <Link to="/about" className="hover:text-yellow-400 transition">ABOUT</Link>
+                <a href="#contact" className="hover:text-yellow-400 transition">CONTACT</a>
               </div>
 
               {/* Mobile Menu Button */}
@@ -238,7 +241,7 @@ const logos = [
                 <div className="flex flex-col space-y-4">
                   <Link to="/" className="hover:text-yellow-400 transition">Home</Link>
                   <a href="#events" className="hover:text-yellow-400 transition">Events</a>
-                  <a href="#sponsors" className="hover:text-yellow-400 transition">Sponsors</a>
+                  {/* <a href="#sponsors" className="hover:text-yellow-400 transition">Sponsors</a> */}
                   <Link to="/about" className="hover:text-yellow-400 transition">About</Link>
                   <a href="#contact" className="hover:text-yellow-400 transition">Contact</a>
                 </div>
@@ -248,7 +251,7 @@ const logos = [
         </nav>
 
         {/* Hero Section */}
-        <section id="home" className="relative pt-1 md min-h-screen flex items-center justify-center text-center">
+        <section id="home" className="relative pt-10 flex items-center justify-center text-center">
           <div className="relative z-10 max-w-4xl mx-auto px-4 bg-black/0 py-12 rounded-lg backdrop-blur-sm">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Meenakshi Sundararajan Engineering College
@@ -520,9 +523,23 @@ const logos = [
                 <p>P karthikeyan</p>
                 <p className="text-sm text-gray-400">Contact: +919940020432</p>
               </div>
+              
             </div>
           </div>
         </section>
+       <section id="contact" className="py-16 bg-black/50 backdrop-blur-sm">        
+        <div className="w-full max-w-3xl mx-auto rounded-lg shadow-lg bg-black/70 p-20">
+        <div className="flex items-center gap-2 mb-4">
+         <MapPin className="w-6 h-6 text-blue-500" />
+         <h1 className="text-2xl font-bold text-gray-200">College Location</h1>
+        </div>
+        <p className="text-gray-400 mb-6">
+            Meenakshi Sundararajan Engineering College, Kodambakkam, Chennai
+        </p>
+          <GoogleMap />
+         </div>
+      </section>
+
 
         {/* Footer */}
         <footer className="bg-black/80 backdrop-blur-sm py-8">
